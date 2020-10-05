@@ -59,3 +59,19 @@ th[role=columnheader]:not(.no-sort):hover:after {
 	visibility: visible;
 	opacity: 1;
 }
+th{
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.tablename{
+  background-color: rgb(151,33,36);
+  color: rgba(255, 255, 255, 0.87);
+  text-align: center;
+}
+
+td{
+  background-color: rgba(18, 17, 33, 0.32);
+  color: rgba(255, 255, 255, 0.87);
+  border-color: #641111;
+
+}
