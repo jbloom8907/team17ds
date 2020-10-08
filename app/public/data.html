@@ -113,6 +113,8 @@
 
           </form>
 
+          <h3> Current Members </h3>
+
           <div class="memberCard" v-for="member in memberList" v-on:click="activeMember = member">
             <span class="lastName">{{ member.lName }}</span>,
             <span clas="firstName">{{ member.fName }}</span>
