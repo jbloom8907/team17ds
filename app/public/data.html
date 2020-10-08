@@ -10,7 +10,7 @@
     <!-- my custom CSS goes here -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>Index</title>
+    <title>Member Records</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -39,97 +39,123 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <table id="taskTable" style="width:100%" border=2>
-          <thead>
-            <tr>
-              <th>Record No.</th>
-              <th>Name</th>
-              <th>Radio No.</th>
-              <th>Station</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-          </table>
-          <br>
-          <form>
-            <button type="submit" class="btn btn-primary">Create</button>
-            <button type="submit" class="btn btn-primary">Edit</button>
-            <button type="submit" class="btn btn-primary">Delete</button>
+    <div class="container-fluid">
+      <div class="row" id="triagePage">
+        <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
+          <form method="post" v-on:submit.prevent="handleNewMemberForm">
+            <h3>Create New Member Record</h3>
+
+          <div class="form-group">
+            <label for="newMemberfName">First Name</label>
+            <input type="text" v-model="newMemberForm.fName" class="form-control" id="newMemberfName" placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label for="newMemberlName">Last Name</label>
+            <input type="text" v-model="newMemberForm.lName" class="form-control" id="newMemberlName" placeholder="Doe">
+          </div>
+          <div class="form-group">
+            <label for="newMemberdob">DOB</label>
+            <input type="text" v-model="newMemberForm.dob" class="form-control" id="newMemberdob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newMembergender">Gender</label>
+            <select class="form-control" v-model="newMemberForm.gender" id="newMembergender">
+              <option value="M">Male</option>
+              <option value="F">Female</option>54
+              <option value="O">Other/Unknown</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="newMemberphonePrimary">Primary Phone</label>
+            <input type="text" v-model="newMemberForm.phonePrimary" class="form-control" id="newMemberphonePrimary" placeholder="800-700-6000">
+          </div>
+          <div class="form-group">
+            <label for="newMemberphoneSecondary">Secondary Phone</label>
+            <input type="text" v-model="newMemberForm.phoneSecondary" class="form-control" id="newMemberphoneSecondary">
+          </div>
+          <div class="form-group">
+            <label for="newMemberemail">Email</label>
+            <input type="text" v-model="newMemberForm.email" class="form-control" id="newMemberemail" placeholder="fire@gmail.com">
+          </div>
+          <div class="form-group">
+            <label for="newMemberstreet">Street</label>
+            <input type="text" v-model="newMemberForm.street" class="form-control" id="newMemberstreet" placeholder="1275 E 10th St">
+          </div><div class="form-group">
+            <label for="newMembercity">City</label>
+            <input type="text" v-model="newMemberForm.city" class="form-control" id="newMembercity" placeholder="Bloomington">
+          </div>
+          <div class="form-group">
+            <label for="newMemberstate">State</label>
+            <input type="text" v-model="newMemberForm.state" class="form-control" id="newMemberstate" placeholder="IN">
+          </div>
+          <div class="form-group">
+            <label for="newMemberzip">Zip</label>
+            <input type="text" v-model="newMemberForm.zip" class="form-control" id="newMemberzip" placeholder="47405">
+          </div>
+          <div class="form-group">
+            <label for="newMembertitle">Certification</label>
+            <input type="text" v-model="newMemberForm.title" class="form-control" id="newMembertitle" placeholder="CPR">
+          </div>
+          <div class="form-group">
+            <label for="newMemberactive">Status</label>
+            <input type="text" v-model="newMemberForm.active" class="form-control" id="newMemberactive" placeholder="Active">
+          </div>
+          <div class="form-group">
+            <label for="newMemberradioNum">Radio Number</label>
+            <input type="text" v-model="newMemberForm.radioNum" class="form-control" id="newMemberradioNum" placeholder="841">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Create</button>
+
           </form>
+
+          <h3>List of all Member</h3>
+
+          <div class="memberCard" v-for="member in memberList" v-on:click="activeMember = member">
+            <span class="lastName">{{ member.lName }}</span>,
+            <span clas="firstName">{{ member.fName }}</span>
+            <span class="birthDate float-right">{{ member.dob }}</span>
+          </div>
+
+          <!-- <button v-on:click="yell()">Click Me!</button> -->
         </div>
-        <div class="col">
+
+        <div class="col-6">
+          <h1>New Member</h1>
+          <form v-on:submit.prevent="handleTriageForm">
+            <div class="form-group">
+              <label for="memberName">Member Name</label>
+              <input class="form-control" id="memberName" v-bind:value="activeMemberName" readonly>
+
+            </div>
+
+          <div class="form-group">
+            <label for="joinDate">Join Date</label>
+            <input type="text" class="form-control" id="joinDate" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="visitSymptoms">Patient Symptoms</label>
+            <textarea class="form-control" id="visitSymptoms" rows="5" v-model="triageForm.symptoms"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
         </div>
-        <div class="col">
-          <table id="taskTable" style="width:100%" border=2>
-          <thead>
-            <tr>
-              <th>Record No.</th>
-              <th>Agency</th>
-              <th>Name</th>
-              <th>Standard Expiry</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-          </table>
-          <br>
-          <form>
-            <button type="submit" class="btn btn-primary">Create</button>
-            <button type="submit" class="btn btn-primary">Edit</button>
-            <button type="submit" class="btn btn-primary">Delete</button>
-          </form>
+        <div class="col cardPane cardPaneRight">
+          <h3>Waiting patients</h3>
+          <div class="patientCard triageCritical" data-patient_id="3" data-visit_id="520">
+            <span class="lastName">Gregory</span>, <span clas="firstName">Tom</span>
+            <span class="birthDate text-right">1978</span>
+          </div>
+          <div class="patientCard triageUrgent" data-patient_id="1" data-visit_id="501">
+            <span class="lastName">Dayton</span>, <span clas="firstName">Keith</span>
+            <span class="birthDate float-right">1980</span>
+          </div>
+          <div class="patientCard triageMinor" data-patient_id="3" data-visit_id="520">
+            <span class="lastName">Prabhakar</span>, <span clas="firstName">Bipin</span>
+            <span class="birthDate text-right">1981</span>
+          </div>
         </div>
       </div>
     </div>
