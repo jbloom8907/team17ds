@@ -43,6 +43,12 @@ var app = new Vue({
       console.log(this.newMemberForm);
 
       this.newMemberForm = this.newMemberData();
+    },
+    handleDataForm( evt ) {
+      console.log("Form submitted!");
+
+      this.dataForm.member = this.activeMember;
+      console.log(this.dataForm);
     }
   },
   created() {
