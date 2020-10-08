@@ -93,8 +93,12 @@
             <input type="text" v-model="newMemberForm.zip" class="form-control" id="newMemberzip" placeholder="47405">
           </div>
           <div class="form-group">
-            <label for="newMembertitle">Certification</label>
-            <input type="text" v-model="newMemberForm.title" class="form-control" id="newMembertitle" placeholder="CPR">
+            <label for="newMemberstation">Station</label>
+            <input type="text" v-model="newMemberForm.station" class="form-control" id="newMemberstation" placeholder="Station 1">
+          </div>
+          <div class="form-group">
+            <label for="newMembertitle">Title</label>
+            <input type="text" v-model="newMemberForm.title" class="form-control" id="newMembertitle" placeholder="Captain">
           </div>
           <div class="form-group">
             <label for="newMemberactive">Status</label>
@@ -104,12 +108,10 @@
             <label for="newMemberradioNum">Radio Number</label>
             <input type="text" v-model="newMemberForm.radioNum" class="form-control" id="newMemberradioNum" placeholder="841">
           </div>
-          
+
           <button type="submit" class="btn btn-primary">Create</button>
 
           </form>
-
-          <h3>List of all Member</h3>
 
           <div class="memberCard" v-for="member in memberList" v-on:click="activeMember = member">
             <span class="lastName">{{ member.lName }}</span>,
@@ -121,7 +123,7 @@
         </div>
 
         <div class="col-6">
-          <h1>New Member</h1>
+          <h1>Edit Member Information</h1>
           <form v-on:submit.prevent="handleDataForm">
             <div class="form-group">
               <label for="memberName">Member Name</label>
@@ -174,8 +176,12 @@
             <input type="text" v-model="newMemberForm.zip" class="form-control" id="newMemberzip" placeholder="47405">
           </div>
           <div class="form-group">
-            <label for="newMembertitle">Certification</label>
-            <input type="text" v-model="newMemberForm.title" class="form-control" id="newMembertitle" placeholder="CPR">
+            <label for="newMemberstation">Station</label>
+            <input type="text" v-model="newMemberForm.station" class="form-control" id="newMemberstation" placeholder="Station 1">
+          </div>
+          <div class="form-group">
+            <label for="newMembertitle">Title</label>
+            <input type="text" v-model="newMemberForm.title" class="form-control" id="newMembertitle" placeholder="Captain">
           </div>
           <div class="form-group">
             <label for="newMemberactive">Status</label>
@@ -216,7 +222,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/data.app.js"></script>
   </body>
