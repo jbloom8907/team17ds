@@ -53,7 +53,7 @@ var app = new Vue({
     }
   },
   created() {
-    fetch("api/members/")
+    fetch("dummy/member-list.php")
     .then( response => response.json() )
     .then( json => {
       this.memberList = json;
