@@ -18,6 +18,7 @@ var app = new Vue({
         city: "",
         state: "",
         zip: "",
+        station: "",
         title: "",
         active: "",
         radioNum: ""
@@ -25,7 +26,7 @@ var app = new Vue({
     },
 
     handleNewMemberForm(evt) {
-      fetch('api/members/post.php', {
+      fetch('dummy/member-list.php', {
         method:'POST',
         body: JSON.stringify(this.newMemberForm),
         headers: {
