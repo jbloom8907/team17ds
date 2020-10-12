@@ -1,0 +1,14 @@
+{
+    "name": "iu-msis/project-fire-2020",
+    "description": "An out-of-class final project",
+    "license": "private",
+    "authors": [{
+        "name": "Jordan Bloom"
+    }],
+    "require": {
+      "ramsey/uuid": "^4.1"
+    },
+    "autoload": {
+        "classmap": ["class/DbConnection.php"]
+    }
+}
