@@ -45,12 +45,12 @@ var app = new Vue({
 
       this.newMemberForm = this.newMemberData();
     },
-    handleDataForm( evt ) {
-      console.log("Form submitted!");
-
-      this.dataForm.member = this.activeMember;
-      console.log(this.dataForm);
-    }
+    // handleDataForm( evt ) {
+    //   console.log("Form submitted!");
+    //
+    //   this.dataForm.member = this.activeMember;
+    //   console.log(this.dataForm);
+    // }
   },
   created() {
     fetch("api/members/")
