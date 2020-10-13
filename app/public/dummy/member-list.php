@@ -1,53 +1,21 @@
-[
-  {
-    fName: "Jordan",
-    lName: "Bloom",
-    dob: "1998-03-31",
-    gender: "M",
-    phonePrimary: "847-975-5699",
-    phoneSecondary: "",
-    email: "bloomjor@iu.edu",
-    street: "508 N College Ave",
-    city: "Bloomington",
-    state: "Indiana",
-    zip: "47404",
-    station: "All",
-    title: "Captain",
-    active: "1",
-    radioNum: "A_2"
-  },
-  {
-    fName: "Reagan",
-    lName: "Blevins",
-    dob: "1997-12-12",
-    gender: "F",
-    phonePrimary: "123-456-7890",
-    phoneSecondary: "",
-    email: "rblevins@iu.edu",
-    street: "123 S College Ave",
-    city: "Bloomington",
-    state: "Indiana",
-    zip: "47404",
-    station: "South",
-    title: "Sergeant",
-    active: "0",
-    radioNum: "B_1"
-  },
-  {
-    fName: "Stella",
-    lName: "Jiang",
-    dob: "1998-01-01",
-    gender: "F",
-    phonePrimary: "098-765-4321",
-    phoneSecondary: "",
-    email: "sjiang@iu.edu",
-    street: "444 E 3rd St",
-    city: "Bloomington",
-    state: "Indiana",
-    zip: "47401",
-    station: "North",
-    title: "Firefighter",
-    active: "1",
-    radioNum: "C_3"
-  }
-]
+{
+  "results": [
+    {
+      "fName": "Jordan",
+      "lName": "Bloom",
+      "dob": "1998-03-31",
+      "gender": "M",
+      "phonePrimary": "847-975-5699",
+      "phoneSecondary": "",
+      "email": "bloomjor@iu.edu",
+      "street": "508 N College Ave",
+      "city": "Bloomington",
+      "state": "Indiana",
+      "zip": "47404",
+      "station": "All",
+      "title": "Captain",
+      "active": "1",
+      "radioNum": "A_2"
+    }
+  ]
+}
