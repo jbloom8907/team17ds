@@ -3,6 +3,7 @@ var app = new Vue({
   data: {
     memberList: [],
     activeMember: null,
+    newMemberForm: {}
   },
   methods: {
     newMemberData() {
