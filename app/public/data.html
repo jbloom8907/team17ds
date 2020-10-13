@@ -128,72 +128,66 @@
         <div class="col-6">
           <h1>Edit Member Information</h1>
           <form v-on:submit.prevent="handleDataForm">
-            <div class="form-group">
-              <label for="memberName">Member Name</label>
-              <input class="form-control" id="memberName" v-bind:value="activeMemberName" readonly>
-
-            </div>
-
           <div class="form-group">
-            <label for="joinDate">Join Date</label>
-            <input type="text" class="form-control" id="joinDate" placeholder="">
-          </div>
-
-          <div class="form-group">
-            <label for="newMemberDob">DOB</label>
-            <input type="text" v-model="newMemberForm.dob" class="form-control" id="newMemberDob" placeholder="2020-01-02">
+            <label for="memberName">Member Name</label>
+            <input class="form-control" id="memberName" v-bind:value="activeMemberName" readonly>
           </div>
           <div class="form-group">
-            <label for="newMemberGender">Gender</label>
-            <select class="form-control" v-model="newMemberForm.gender" id="newMemberGender">
+            <label for="newMemberdob">DOB</label>
+            <input type="text" v-model="newMemberForm.dob" class="form-control" id="newMemberdob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newMembergender">Gender</label>
+            <select class="form-control" v-model="newMemberForm.gender" id="newMembergender">
               <option value="M">Male</option>
               <option value="F">Female</option>
               <option value="O">Other/Unknown</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="newMemberPhonePrimary">Primary Phone</label>
-            <input type="text" v-model="newMemberForm.phonePrimary" class="form-control" id="newMemberPhonePrimary" placeholder="800-700-6000">
+            <label for="newMemberphonePrimary">Primary Phone</label>
+            <input type="text" v-model="newMemberForm.phonePrimary" class="form-control" id="newMemberphonePrimary" placeholder="800-700-6000">
           </div>
           <div class="form-group">
-            <label for="newMemberPhoneSecondary">Secondary Phone</label>
-            <input type="text" v-model="newMemberForm.phoneSecondary" class="form-control" id="newMemberPhoneSecondary">
+            <label for="newMemberphoneSecondary">Secondary Phone</label>
+            <input type="text" v-model="newMemberForm.phoneSecondary" class="form-control" id="newMemberphoneSecondary">
           </div>
           <div class="form-group">
-            <label for="newMemberEmail">Email</label>
-            <input type="text" v-model="newMemberForm.email" class="form-control" id="newMemberEmail" placeholder="fire@gmail.com">
+            <label for="newMemberemail">Email</label>
+            <input type="text" v-model="newMemberForm.email" class="form-control" id="newMemberemail" placeholder="fire@gmail.com">
           </div>
           <div class="form-group">
-            <label for="newMemberStreet">Street</label>
-            <input type="text" v-model="newMemberForm.street" class="form-control" id="newMemberStreet" placeholder="1275 E 10th St">
+            <label for="newMemberstreet">Street</label>
+            <input type="text" v-model="newMemberForm.street" class="form-control" id="newMemberstreet" placeholder="1275 E 10th St">
           </div><div class="form-group">
-            <label for="newMemberCity">City</label>
-            <input type="text" v-model="newMemberForm.city" class="form-control" id="newMemberCity" placeholder="Bloomington">
+            <label for="newMembercity">City</label>
+            <input type="text" v-model="newMemberForm.city" class="form-control" id="newMembercity" placeholder="Bloomington">
           </div>
           <div class="form-group">
-            <label for="newMemberState">State</label>
-            <input type="text" v-model="newMemberForm.state" class="form-control" id="newMemberState" placeholder="IN">
+            <label for="newMemberstate">State</label>
+            <input type="text" v-model="newMemberForm.state" class="form-control" id="newMemberstate" placeholder="IN">
           </div>
           <div class="form-group">
-            <label for="newMemberZip">Zip</label>
-            <input type="text" v-model="newMemberForm.zip" class="form-control" id="newMemberZip" placeholder="47405">
+            <label for="newMemberzip">Zip</label>
+            <input type="text" v-model="newMemberForm.zip" class="form-control" id="newMemberzip" placeholder="47405">
           </div>
           <div class="form-group">
-            <label for="newMemberStation">Station</label>
-            <input type="text" v-model="newMemberForm.station" class="form-control" id="newMemberStation" placeholder="Station 1">
+            <label for="newMemberstation">Station</label>
+            <input type="text" v-model="newMemberForm.station" class="form-control" id="newMemberstation" placeholder="Station 1">
           </div>
           <div class="form-group">
-            <label for="newMemberTitle">Title</label>
-            <input type="text" v-model="newMemberForm.title" class="form-control" id="newMemberTitle" placeholder="Captain">
+            <label for="newMembertitle">Title</label>
+            <input type="text" v-model="newMemberForm.title" class="form-control" id="newMembertitle" placeholder="Captain">
           </div>
           <div class="form-group">
-            <label for="newMemberActive">Status</label>
-            <input type="text" v-model="newMemberForm.active" class="form-control" id="newMemberActive" placeholder="1">
+            <label for="newMemberactive">Status</label>
+            <input type="text" v-model="newMemberForm.active" class="form-control" id="newMemberactive" placeholder="1">
           </div>
           <div class="form-group">
-            <label for="newMemberRadioNum">Radio Number</label>
-            <input type="text" v-model="newMemberForm.radioNum" class="form-control" id="newMemberRadioNum" placeholder="841">
+            <label for="newMemberradioNum">Radio Number</label>
+            <input type="text" v-model="newMemberForm.radioNum" class="form-control" id="newMemberradioNum" placeholder="C_7">
           </div>
+
           <button type="submit" class="btn btn-primary">Edit</button>
           <button type="submit" class="btn btn-primary">Delete</button>
 
