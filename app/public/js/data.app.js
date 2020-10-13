@@ -5,6 +5,11 @@ var app = new Vue({
     activeMember: null,
     newMemberForm: {}
   },
+  computed: {
+    activeMemberName() {
+      return this.activeMember ? this.activeMember.lName + ', ' + this.activeMember.fName : ''
+    }
+  },
   methods: {
     newMemberData() {
       return {
@@ -46,10 +51,26 @@ var app = new Vue({
       console.log(this.newMemberForm);
     },
     // handleDataForm( evt ) {
-    //   console.log("Form submitted!");
+    //   console.log("Edit form submitted!");
     //
-    //   this.dataForm.member = this.activeMember;
-    //   console.log(this.dataForm);
+    //   if (!this.activeMember) {
+    //     alert("ERROR: No member selected!");
+    //     return false;
+    //   }
+    //
+    //   fetch('api/updates/memberData.php', {
+    //     method:'POST',
+    //     body: JSON.stringify(this.dataForm),
+    //     headers: {
+    //       "Content-Type": "application/json; charset=utf-8"
+    //     }
+    //   })
+    //   .then( response => response.json() )
+    //   .then( json => {
+    //     console.log("Returned from member data:", json);
+    //     this.memberList.push(json[0]);
+    //     this.newDataForm = this.newMemberData();
+    //   });
     // }
   },
   created() {
