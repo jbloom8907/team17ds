@@ -26,7 +26,7 @@ var app = new Vue({
     },
 
     handleNewMemberForm(evt) {
-      fetch('dummy/member-list.php', {
+      fetch('api/records/newmember.php', {
         method:'POST',
         body: JSON.stringify(this.newMemberForm),
         headers: {
@@ -38,12 +38,11 @@ var app = new Vue({
         console.log("Returned from post:", json);
     // TODO: test a result was returned!
         this.memberList.push(json[0]);
+        this.newMemberForm = this.newMemberData();
       });
 
       console.log("Creating (POSTing)...!");
       console.log(this.newMemberForm);
-
-      this.newMemberForm = this.newMemberData();
     },
     // handleDataForm( evt ) {
     //   console.log("Form submitted!");
