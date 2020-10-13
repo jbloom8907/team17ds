@@ -26,7 +26,7 @@ var app = new Vue({
     },
 
     handleNewMemberForm(evt) {
-      fetch('api/records/newmember.php', {
+      fetch('api/members/newmember.php', {
         method:'POST',
         body: JSON.stringify(this.newMemberForm),
         headers: {
