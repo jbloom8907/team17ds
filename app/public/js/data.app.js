@@ -88,11 +88,12 @@ var app = new Vue({
       })
       .then( response => response.json() )
       .then( json => {
-        console.log("Returned from member update:", json);
-        this.updateList = json;
-        this.newUpdateForm = this.updateMemberData();
+        console.log("Returned from post:", json);
+    // TODO: test a result was returned!
+        this.updateList.push(json[0]);
+        this.NewEditMemberForm = this.updateMemberData();
       });
-    }
+    },
   },
   created() {
     fetch("api/members/")
@@ -103,7 +104,15 @@ var app = new Vue({
       console.log(json)}
     );
 
+    fetch("api/updates/")
+    .then( response => response.json() )
+    .then( json => {
+      this.updateList = json;
+
+      console.log(json)}
+    );
+
     this.newMemberForm = this.newMemberData();
-    this.editMemberForm = this.updateMemberData();
+    this.NewEditMemberForm = this.updateMemberData();
   }
 })
