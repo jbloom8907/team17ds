@@ -129,6 +129,9 @@
         </div>
 
         <div class="col-6">
+
+        </div>
+        <div class="col cardPane cardPaneRight">
           <h1>Edit Member Information</h1>
           <form v-on:submit.prevent="handleDataForm">
           <div class="form-group">
@@ -198,21 +201,6 @@
           <button type="submit" class="btn btn-primary">Delete</button>
 
         </form>
-        </div>
-        <div class="col cardPane cardPaneRight">
-          <h3>Member List</h3>
-          <div class="patientCard dataCritical" data-patient_id="3" data-visit_id="520">
-            <span class="lastName">Blevins</span>, <span clas="firstName">Reagan</span>
-            <span class="birthDate text-right">1997</span>
-          </div>
-          <div class="patientCard dataUrgent" data-patient_id="1" data-visit_id="501">
-            <span class="lastName">Bloom</span>, <span clas="firstName">Jordan</span>
-            <span class="birthDate text-right">1998</span>
-          </div>
-          <div class="patientCard dataMinor" data-patient_id="3" data-visit_id="520">
-            <span class="lastName">Jiang</span>, <span clas="firstName">Stella</span>
-            <span class="birthDate text-right">1998</span>
-          </div>
         </div>
       </div>
     </div>
