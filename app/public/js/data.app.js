@@ -4,7 +4,7 @@ var app = new Vue({
     memberList: [],
     updateList: [],
     activeMember: null,
-    updateMemberForm: {},
+    editMemberForm: {},
     newMemberForm: {}
   },
   computed: {
@@ -88,7 +88,7 @@ var app = new Vue({
       .then( json => {
         console.log("Returned from member data:", json);
         this.updateList = json;
-        this.updateMemberForm = this.updateMemberData();
+        this.editMemberForm = this.updateMemberData();
       });
     }
   },
