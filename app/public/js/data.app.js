@@ -70,12 +70,14 @@ var app = new Vue({
       console.log(this.newMemberForm);
     },
     handleDataForm( evt ) {
-      console.log("Edit form submitted!");
+      console.log("Data form submitted!");
 
       if (!this.activeMember) {
         alert("ERROR: No member selected!");
         return false;
       }
+
+      console.log(this.editMemberForm);
 
       fetch('api/updates/updatemember.php', {
         method:'POST',
@@ -86,9 +88,9 @@ var app = new Vue({
       })
       .then( response => response.json() )
       .then( json => {
-        console.log("Returned from member data:", json);
-        this.updateList.push(json[0]);
-        this.editMemberForm = this.updateMemberData();
+        console.log("Returned from member update:", json);
+        this.updateList = json;
+        this.newUpdateForm = this.updateMemberData();
       });
     }
   },
