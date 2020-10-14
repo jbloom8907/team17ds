@@ -15,8 +15,7 @@ var app = new Vue({
   methods: {
     newMemberData() {
       return {
-        fName: "",
-        lName: "",
+        selection: "",
         dob: "",
         gender: "",
         phonePrimary: "",
@@ -70,6 +69,8 @@ var app = new Vue({
       console.log(this.newMemberForm);
     },
     handleDataForm( evt ) {
+      this.newUpdateForm.selection = this.activeMember.email;
+
       fetch('api/updates/updatemember.php', {
         method:'POST',
         body: JSON.stringify(this.newUpdateForm),

@@ -14,7 +14,7 @@ $db = DbConnection::getConnection();
 $stmt = $db->prepare(
   'UPDATE member
   SET dob = ?, gender = ?, phonePrimary = ?, phoneSecondary = ?, email = ?, street = ?, city = ?, state = ?, zip = ?, station = ?, title = ?, active = ?, radioNum  = ?
-  WHERE fName = "Jordan" AND lName = "Bloom"'
+  WHERE email = ?'
 );
 
 $stmt->execute([
@@ -30,7 +30,8 @@ $stmt->execute([
   $_POST['station'],
   $_POST['title'],
   $_POST['active'],
-  $_POST['radioNum']
+  $_POST['radioNum'],
+  $_POST['selection']
 ]);
 
 // If needed, get auto-generated PK from DB
