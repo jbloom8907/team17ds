@@ -79,7 +79,7 @@ var app = new Vue({
 
       fetch('api/updates/updatemember.php', {
         method:'POST',
-        body: JSON.stringify(this.updateMemberForm),
+        body: JSON.stringify(this.editMemberForm),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
@@ -102,5 +102,6 @@ var app = new Vue({
     );
 
     this.newMemberForm = this.newMemberData();
+    this.editMemberForm = this.updateMemberData();
   }
 })
