@@ -84,20 +84,25 @@ var app = new Vue({
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from post:", json);
-        // TODO: test a result was returned!
+    // TODO: test a result was returned!
         this.updateList.push(json[0]);
-        this.newUpdateForm = this.updateMemberData();
+        this.NewEditMemberForm = this.updateMemberData();
       });
-
-      console.log("Creating (POSTing)...!");
-      console.log(this.newPtForm);
-    }
+    },
   },
   created() {
     fetch("api/members/")
     .then( response => response.json() )
     .then( json => {
       this.memberList = json;
+
+      console.log(json)}
+    );
+
+    fetch("api/updates/")
+    .then( response => response.json() )
+    .then( json => {
+      this.updateList = json;
 
       console.log(json)}
     );
