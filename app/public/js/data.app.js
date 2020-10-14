@@ -87,7 +87,7 @@ var app = new Vue({
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from member data:", json);
-        this.dataList.push(json[0]);
+        this.dataList = json;
         this.dataForm = this.newFormData();
       });
     }
