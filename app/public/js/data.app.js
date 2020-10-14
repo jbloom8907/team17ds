@@ -4,7 +4,7 @@ var app = new Vue({
     memberList: [],
     updateList: [],
     activeMember: null,
-    editMemberForm: {},
+    newUpdateForm: {},
     newMemberForm: {}
   },
   computed: {
