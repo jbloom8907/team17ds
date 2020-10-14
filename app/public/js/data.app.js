@@ -2,9 +2,9 @@ var app = new Vue({
   el: '#dataPage',
   data: {
     memberList: [],
-    dataList: [],
+    updateList: [],
     activeMember: null,
-    dataForm: {},
+    updateMemberForm: {},
     newMemberForm: {}
   },
   computed: {
@@ -32,7 +32,7 @@ var app = new Vue({
         radioNum: ""
       }
     },
-    newFormData() {
+    updateMemberData() {
       return {
         dob: "",
         gender: "",
@@ -77,9 +77,9 @@ var app = new Vue({
         return false;
       }
 
-      fetch('api/updates/memberData.php', {
+      fetch('api/updates/updatemember.php', {
         method:'POST',
-        body: JSON.stringify(this.dataForm),
+        body: JSON.stringify(this.updateMemberForm),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
@@ -87,8 +87,8 @@ var app = new Vue({
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from member data:", json);
-        this.dataList = json;
-        this.dataForm = this.newFormData();
+        this.updateList = json;
+        this.updateMemberForm = this.updateMemberData();
       });
     }
   },

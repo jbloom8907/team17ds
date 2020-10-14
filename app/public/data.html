@@ -130,7 +130,7 @@
 
         <div class="col-6">
           <h1>Edit Member Information</h1>
-          <form v-on:submit.prevent="handleDataForm">
+          <form v-on:submit.prevent="updateMemberForm">
           <div class="form-group">
             <label for="memberName">Member Name</label>
             <input class="form-control" id="memberName" v-bind:value="activeMemberName" readonly>
