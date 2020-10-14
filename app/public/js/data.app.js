@@ -2,6 +2,7 @@ var app = new Vue({
   el: '#dataPage',
   data: {
     memberList: [],
+    dataList: [],
     activeMember: null,
     dataForm: {},
     newMemberForm: {}
@@ -86,7 +87,7 @@ var app = new Vue({
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from member data:", json);
-        this.newFormData.push(json[0]);
+        this.dataList.push(json[0]);
         this.dataForm = this.newFormData();
       });
     }
