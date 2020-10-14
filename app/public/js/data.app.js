@@ -70,14 +70,9 @@ var app = new Vue({
       console.log(this.newMemberForm);
     },
     handleDataForm( evt ) {
-      console.log("Data form submitted!");
+      // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
 
-      if (!this.activeMember) {
-        alert("ERROR: No member selected!");
-        return false;
-      }
-
-      console.log(this.editMemberForm);
+      // TODO: Validate the data!
 
       fetch('api/updates/updatemember.php', {
         method:'POST',
@@ -88,10 +83,14 @@ var app = new Vue({
       })
       .then( response => response.json() )
       .then( json => {
-        console.log("Returned from member update:", json);
-        this.updateList = json;
+        console.log("Returned from post:", json);
+        // TODO: test a result was returned!
+        this.updateList.push(json[0]);
         this.newUpdateForm = this.updateMemberData();
       });
+
+      console.log("Creating (POSTing)...!");
+      console.log(this.newPtForm);
     }
   },
   created() {
@@ -104,6 +103,6 @@ var app = new Vue({
     );
 
     this.newMemberForm = this.newMemberData();
-    this.editMemberForm = this.updateMemberData();
+    this.newUpdateForm = this.updateMemberData();
   }
 })
