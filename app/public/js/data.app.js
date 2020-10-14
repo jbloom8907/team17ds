@@ -70,13 +70,9 @@ var app = new Vue({
       console.log(this.newMemberForm);
     },
     handleDataForm( evt ) {
-      // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
-
-      // TODO: Validate the data!
-
       fetch('api/updates/updatemember.php', {
         method:'POST',
-        body: JSON.stringify(this.editMemberForm),
+        body: JSON.stringify(this.newUpdateForm),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
@@ -86,8 +82,11 @@ var app = new Vue({
         console.log("Returned from post:", json);
     // TODO: test a result was returned!
         this.updateList.push(json[0]);
-        this.NewEditMemberForm = this.updateMemberData();
+        this.newUpdateForm = this.updateMemberData();
       });
+
+      console.log("Creating (POSTing)...!");
+      console.log(this.newUpdateForm);
     },
   },
   created() {
