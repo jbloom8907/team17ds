@@ -12,7 +12,7 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 
-$sql = '';
+$sql = 'SELECT * FROM member';
 $vars = [];
 
 if (isset($_GET['edit'])) {
