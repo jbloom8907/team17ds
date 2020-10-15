@@ -15,7 +15,7 @@ if (isset($_POST['edit'])) {
   // This is an example of a parameterized query
   $sql = 'UPDATE member
   SET dob = ?, gender = ?, phonePrimary = ?, phoneSecondary = ?, email = ?, street = ?, city = ?, state = ?, zip = ?, station = ?, title = ?, active = ?, radioNum = ?
-  WHERE email = ?'
+  WHERE email = ?';
   $vars = [
       $_POST['dob'],
       $_POST['gender'],
@@ -35,7 +35,7 @@ if (isset($_POST['edit'])) {
 }
 else (isset($_POST['delete'])) {
   $sql = 'DELETE FROM member
-  WHERE email = ?'
+  WHERE email = ?';
   $vars = [
       $_POST['selection']
     ];
