@@ -25,7 +25,12 @@ nav,
 .navbar-custom .navbar-brand {
   color: rgb(255,255,255);
 }
-
+.cardPaneLeft{
+    border-right: 1px solid rgb(77,55,41);
+}
+.cardPaneRight{
+    border-left: 1px solid rgb(77,55,41);
+}
 .memberCard {
   margin: 4px;
   padding: 4px 8px;
