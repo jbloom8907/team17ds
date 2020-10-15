@@ -11,6 +11,10 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
+
+$sql = '';
+$vars = [];
+
 if (isset($_POST['edit'])) {
   // This is an example of a parameterized query
   $sql = 'UPDATE member
