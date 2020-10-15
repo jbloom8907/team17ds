@@ -11,7 +11,7 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
-if ($_POST['edit'] == 'Update') {
+if ($_POST['edit'] == 'update') {
   $stmt = $db->prepare(
     'UPDATE member
     SET dob = ?, gender = ?, phonePrimary = ?, phoneSecondary = ?, email = ?, street = ?, city = ?, state = ?, zip = ?, station = ?, title = ?, active = ?, radioNum = ?
@@ -34,7 +34,7 @@ if ($_POST['edit'] == 'Update') {
     $_POST['radioNum'],
     $_POST['selection']
   ]);
-} else if ($_POST['edit'] == 'Delete') {
+} else if ($_POST['edit'] == 'delete') {
   $stmt = $db->prepare(
     'DELETE FROM member
     WHERE email = ?'
