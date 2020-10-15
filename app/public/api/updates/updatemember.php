@@ -33,7 +33,7 @@ if (isset($_POST['edit'])) {
       $_POST['selection']
     ];
 }
-else (isset($_POST['delete'])) {
+else if (isset($_POST['delete'])) {
   $sql = 'DELETE FROM member WHERE email = ?';
   $vars = [
       $_POST['selection']
