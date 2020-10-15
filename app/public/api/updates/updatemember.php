@@ -15,7 +15,7 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM member';
 $vars = [];
 
-if (isset($_GET['edit'])) {
+if (isset($_POST['edit'])) {
   // This is an example of a parameterized query
   $sql = 'UPDATE member
   SET dob = ?, gender = ?, phonePrimary = ?, phoneSecondary = ?, email = ?, street = ?, city = ?, state = ?, zip = ?, station = ?, title = ?, active = ?, radioNum = ?
@@ -37,7 +37,7 @@ if (isset($_GET['edit'])) {
       $_POST['selection']
     ];
 }
-else if (isset($_GET['delete'])) {
+else if (isset($_POST['delete'])) {
   $sql = 'DELETE FROM member WHERE email = ?';
   $vars = [
       $_POST['selection']
