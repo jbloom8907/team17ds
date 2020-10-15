@@ -11,28 +11,41 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
-$stmt = $db->prepare(
-  'UPDATE member
-  SET dob = ?, gender = ?, phonePrimary = ?, phoneSecondary = ?, email = ?, street = ?, city = ?, state = ?, zip = ?, station = ?, title = ?, active = ?, radioNum  = ?
-  WHERE email = ?'
-);
-
-$stmt->execute([
-  $_POST['dob'],
-  $_POST['gender'],
-  $_POST['phonePrimary'],
-  $_POST['phoneSecondary'],
-  $_POST['email'],
-  $_POST['street'],
-  $_POST['city'],
-  $_POST['state'],
-  $_POST['zip'],
-  $_POST['station'],
-  $_POST['title'],
-  $_POST['active'],
-  $_POST['radioNum'],
-  $_POST['selection']
-]);
+if ($_POST['edit'] == 'Update') {
+  $stmt = $db->prepare(
+    'UPDATE member
+    SET dob = ?, gender = ?, phonePrimary = ?, phoneSecondary = ?, email = ?, street = ?, city = ?, state = ?, zip = ?, station = ?, title = ?, active = ?, radioNum = ?
+    WHERE email = ?'
+  );
+  
+  $stmt->execute([
+    $_POST['dob'],
+    $_POST['gender'],
+    $_POST['phonePrimary'],
+    $_POST['phoneSecondary'],
+    $_POST['email'],
+    $_POST['street'],
+    $_POST['city'],
+    $_POST['state'],
+    $_POST['zip'],
+    $_POST['station'],
+    $_POST['title'],
+    $_POST['active'],
+    $_POST['radioNum'],
+    $_POST['selection']
+  ]);
+} else if ($_POST['edit'] == 'Delete') {
+  $stmt = $db->prepare(
+    'DELETE FROM member
+    WHERE email = ?'
+  );
+  
+  $stmt->execute([
+    $_POST['selection']
+  ]);
+} else {
+  console.log("You broke something");
+}
 
 // If needed, get auto-generated PK from DB
 $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
