@@ -34,8 +34,7 @@ if (isset($_POST['edit'])) {
     ];
 }
 else (isset($_POST['delete'])) {
-  $sql = 'DELETE FROM member
-  WHERE email = ?';
+  $sql = 'DELETE FROM member WHERE email = ?';
   $vars = [
       $_POST['selection']
     ];
