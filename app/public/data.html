@@ -187,7 +187,7 @@
           </div>
           <div class="form-group">
             <label for="existingMemberactive">Status</label>
-            <select class="form-control" v-model="newUpdateForm.active" id="existingMembergender">
+            <select class="form-control" v-model="newUpdateForm.active" id="existingMemberactive">
               <option value="0">Inactive</option>
               <option value="1">Active</option>
             </select>
@@ -196,9 +196,15 @@
             <label for="existingMemberradioNum">Radio Number</label>
             <input type="text" v-model="newUpdateForm.radioNum" class="form-control" id="existingMemberradioNum" placeholder="C_7">
           </div>
+          <div class="form-group">
+            <label for="existingMemberupdate"><b>Delete or edit record?</b></label>
+            <select class="form-control" v-model="newUpdateForm.update" id="existingMemberupdate">
+              <option value="delete">Delete</option>
+              <option value="edit">Edit</option>
+            </select>
+          </div>
 
-          <input type="submit" name='editBtn' value='Edit' class="btn btn-primary" />
-          <input type="submit" name='deleteBtn' value='Delete' class="btn btn-primary" />
+          <button type="submit" class="btn btn-primary">Update</button>
 
         </form>
         </div>

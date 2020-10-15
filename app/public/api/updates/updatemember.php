@@ -12,10 +12,11 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 
-$sql = 'UPDATE member
-  SET dob = ?, gender = ?, phonePrimary = ?, phoneSecondary = ?, email = ?, street = ?, city = ?, state = ?, zip = ?, station = ?, title = ?, active = ?, radioNum = ?
-  WHERE email = ?';
-$vars = [
+if ($_POST['update'] == 'edit') {
+  $sql = 'UPDATE member
+    SET dob = ?, gender = ?, phonePrimary = ?, phoneSecondary = ?, email = ?, street = ?, city = ?, state = ?, zip = ?, station = ?, title = ?, active = ?, radioNum = ?
+    WHERE email = ?';
+  $vars = [
     $_POST['dob'],
     $_POST['gender'],
     $_POST['phonePrimary'],
@@ -31,6 +32,12 @@ $vars = [
     $_POST['radioNum'],
     $_POST['selection']
   ];
+} else if ($_POST['update'] == 'delete') {
+  $sql = 'DELETE FROM member WHERE email = ?';
+  $vars = [
+    $_POST['selection']
+  ];
+}
 
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);

@@ -45,7 +45,8 @@ var app = new Vue({
         station: "",
         title: "",
         active: "",
-        radioNum: ""
+        radioNum: "",
+        update: ""
       }
     },
 
