@@ -2,9 +2,9 @@ var app = new Vue({
   el: '#dataPage',
   data: {
     memberList: [],
-    updateList: [],
+    memberUpdateList: [],
     activeMember: null,
-    newUpdateForm: {},
+    newMemberUpdateForm: {},
     newMemberForm: {}
   },
   computed: {
@@ -69,12 +69,12 @@ var app = new Vue({
       console.log("Creating (POSTing)...!");
       console.log(this.newMemberForm);
     },
-    handleDataForm( evt ) {
-      this.newUpdateForm.selection = this.activeMember.email;
+    handleMemberDataForm( evt ) {
+      this.newMemberUpdateForm.selection = this.activeMember.email;
 
       fetch('api/updates/updatemember.php', {
         method:'POST',
-        body: JSON.stringify(this.newUpdateForm),
+        body: JSON.stringify(this.newMemberUpdateForm),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         }
@@ -83,12 +83,12 @@ var app = new Vue({
       .then( json => {
         console.log("Returned from post:", json);
     // TODO: test a result was returned!
-        this.updateList.push(json[0]);
-        this.newUpdateForm = this.updateMemberData();
+        this.memberUpdateList.push(json[0]);
+        this.newMemberUpdateForm = this.updateMemberData();
       });
 
       console.log("Creating (POSTing)...!");
-      console.log(this.newUpdateForm);
+      console.log(this.newMemberUpdateForm);
     },
   },
   created() {
@@ -103,12 +103,12 @@ var app = new Vue({
     fetch("api/updates/")
     .then( response => response.json() )
     .then( json => {
-      this.updateList = json;
+      this.memberUpdateList = json;
 
       console.log(json)}
     );
 
     this.newMemberForm = this.newMemberData();
-    this.newUpdateForm = this.updateMemberData();
+    this.newMemberUpdateForm = this.updateMemberData();
   }
 })

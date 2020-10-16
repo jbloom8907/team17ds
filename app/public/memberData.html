@@ -24,7 +24,7 @@
             <a class="nav-link" href="index.html">Index<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="data.html">Data Entry</a>
+            <a class="nav-link" href="memberData.html">Data Entry - Member</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="detailed.html">Detailed View</a>
@@ -133,18 +133,18 @@
         </div>
         <div class="col cardPane cardPaneRight">
           <h1>Edit Member Information</h1>
-          <form method="post" v-on:submit.prevent="handleDataForm">
+          <form method="post" v-on:submit.prevent="handleMemberDataForm">
           <div class="form-group">
             <label for="memberName">Member Name</label>
             <input class="form-control" id="memberName" v-bind:value="activeMemberName" readonly>
           </div>
           <div class="form-group">
             <label for="existingMemberdob">DOB</label>
-            <input type="text" v-model="newUpdateForm.dob" class="form-control" id="existingMemberdob" placeholder="2020-01-02">
+            <input type="text" v-model="newMemberUpdateForm.dob" class="form-control" id="existingMemberdob" placeholder="2020-01-02">
           </div>
           <div class="form-group">
             <label for="existingMembergender">Gender</label>
-            <select class="form-control" v-model="newUpdateForm.gender" id="existingMembergender">
+            <select class="form-control" v-model="newMemberUpdateForm.gender" id="existingMembergender">
               <option value="M">Male</option>
               <option value="F">Female</option>
               <option value="O">Other/Unknown</option>
@@ -152,53 +152,53 @@
           </div>
           <div class="form-group">
             <label for="existingMemberphonePrimary">Primary Phone</label>
-            <input type="text" v-model="newUpdateForm.phonePrimary" class="form-control" id="existingMemberphonePrimary" placeholder="800-700-6000">
+            <input type="text" v-model="newMemberUpdateForm.phonePrimary" class="form-control" id="existingMemberphonePrimary" placeholder="800-700-6000">
           </div>
           <div class="form-group">
             <label for="existingMemberphoneSecondary">Secondary Phone</label>
-            <input type="text" v-model="newUpdateForm.phoneSecondary" class="form-control" id="existingMemberphoneSecondary">
+            <input type="text" v-model="newMemberUpdateForm.phoneSecondary" class="form-control" id="existingMemberphoneSecondary">
           </div>
           <div class="form-group">
             <label for="existingMemberemail">Email</label>
-            <input type="text" v-model="newUpdateForm.email" class="form-control" id="existingMemberemail" placeholder="fire@gmail.com">
+            <input type="text" v-model="newMemberUpdateForm.email" class="form-control" id="existingMemberemail" placeholder="fire@gmail.com">
           </div>
           <div class="form-group">
             <label for="existingMemberstreet">Street</label>
-            <input type="text" v-model="newUpdateForm.street" class="form-control" id="existingMemberstreet" placeholder="1275 E 10th St">
+            <input type="text" v-model="newMemberUpdateForm.street" class="form-control" id="existingMemberstreet" placeholder="1275 E 10th St">
           </div><div class="form-group">
             <label for="existingMembercity">City</label>
-            <input type="text" v-model="newUpdateForm.city" class="form-control" id="existingMembercity" placeholder="Bloomington">
+            <input type="text" v-model="newMemberUpdateForm.city" class="form-control" id="existingMembercity" placeholder="Bloomington">
           </div>
           <div class="form-group">
             <label for="existingMemberstate">State</label>
-            <input type="text" v-model="newUpdateForm.state" class="form-control" id="existingMemberstate" placeholder="Indiana">
+            <input type="text" v-model="newMemberUpdateForm.state" class="form-control" id="existingMemberstate" placeholder="Indiana">
           </div>
           <div class="form-group">
             <label for="existingMemberzip">Zip</label>
-            <input type="text" v-model="newUpdateForm.zip" class="form-control" id="existingMemberzip" placeholder="47405">
+            <input type="text" v-model="newMemberUpdateForm.zip" class="form-control" id="existingMemberzip" placeholder="47405">
           </div>
           <div class="form-group">
             <label for="existingMemberstation">Station</label>
-            <input type="text" v-model="newUpdateForm.station" class="form-control" id="existingMemberstation" placeholder="Station 1">
+            <input type="text" v-model="newMemberUpdateForm.station" class="form-control" id="existingMemberstation" placeholder="Station 1">
           </div>
           <div class="form-group">
             <label for="existingMembertitle">Title</label>
-            <input type="text" v-model="newUpdateForm.title" class="form-control" id="existingMembertitle" placeholder="Captain">
+            <input type="text" v-model="newMemberUpdateForm.title" class="form-control" id="existingMembertitle" placeholder="Captain">
           </div>
           <div class="form-group">
             <label for="existingMemberactive">Status</label>
-            <select class="form-control" v-model="newUpdateForm.active" id="existingMemberactive">
+            <select class="form-control" v-model="newMemberUpdateForm.active" id="existingMemberactive">
               <option value="0">Inactive</option>
               <option value="1">Active</option>
             </select>
           </div>
           <div class="form-group">
             <label for="existingMemberradioNum">Radio Number</label>
-            <input type="text" v-model="newUpdateForm.radioNum" class="form-control" id="existingMemberradioNum" placeholder="C_7">
+            <input type="text" v-model="newMemberUpdateForm.radioNum" class="form-control" id="existingMemberradioNum" placeholder="C_7">
           </div>
           <div class="form-group">
             <label for="existingMemberupdate"><b>Delete or edit record?</b></label>
-            <select class="form-control" v-model="newUpdateForm.update" id="existingMemberupdate">
+            <select class="form-control" v-model="newMemberUpdateForm.update" id="existingMemberupdate">
               <option value="delete">Delete</option>
               <option value="edit">Edit</option>
             </select>
@@ -221,6 +221,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/data.app.js"></script>
+    <script src="js/memberData.app.js"></script>
   </body>
 </html>
