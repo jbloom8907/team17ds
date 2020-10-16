@@ -9,7 +9,7 @@ var app = new Vue({
   },
   computed: {
     activeCertificationName() {
-      return this.activeCertification ? this.activeCertification.name
+      return this.activeCertification ? this.activeCertification.name: ""
     }
   },
   methods: {
