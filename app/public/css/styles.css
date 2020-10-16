@@ -46,11 +46,27 @@ nav,
   background-color: white;
   color: black;
 }
-.memberCard .birthDate{
+.memberCard .birthDate {
   float: right;
 }
 
 .memberCard .lastName {
+  font-weight:bold;
+}
+
+.certificationCard {
+  margin: 4px;
+  padding: 4px 8px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+.certificationCard .StandardExpiry {
+  float: right;
+}
+
+.certificationCard .Agency {
   font-weight:bold;
 }
 

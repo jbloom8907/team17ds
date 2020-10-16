@@ -50,15 +50,15 @@
 
           <div class="form-group">
             <label for="newCertificationAgency">Agency</label>
-            <input type="text" v-model="newCertificationForm.agency" class="form-control" id="newCertificationAgency" placeholder="Jane">
+            <input type="text" v-model="newCertificationForm.agency" class="form-control" id="newCertificationAgency" placeholder="Red Cross">
           </div>
           <div class="form-group">
             <label for="newCertificationName">Certification Name</label>
-            <input type="text" v-model="newCertificationForm.name" class="form-control" id="newCertificationName" placeholder="Doe">
+            <input type="text" v-model="newCertificationForm.name" class="form-control" id="newCertificationName" placeholder="CPR Certification">
           </div>
           <div class="form-group">
             <label for="newCertificationStandardExpiry">Standard Expiry</label>
-            <input type="text" v-model="newCertificationForm.standardExpiry" class="form-control" id="newCertificationStandardExpiry" placeholder="2020-01-02">
+            <input type="text" v-model="newCertificationForm.standardExpiry" class="form-control" id="newCertificationStandardExpiry" placeholder="2">
           </div>
 
           <button type="submit" class="btn btn-primary">Create</button>
@@ -84,15 +84,15 @@
           <form method="post" v-on:submit.prevent="handleCertificationDataForm">
             <div class="form-group">
               <label for="existingCertificationAgency">Agency</label>
-              <input type="text" v-model="newCertificationUpdateForm.agency" class="form-control" id="existingCertificationAgency" placeholder="Jane">
+              <input type="text" v-model="newCertificationUpdateForm.agency" class="form-control" id="existingCertificationAgency" placeholder="Red Cross">
             </div>
             <div class="form-group">
               <label for="existingCertificationName">Certification Name</label>
-              <input type="text" v-model="newCertificationUpdateForm.name" class="form-control" id="existingCertificationName" placeholder="Doe">
+              <input type="text" v-model="newCertificationUpdateForm.name" class="form-control" id="existingCertificationName" placeholder="CPR Certification">
             </div>
             <div class="form-group">
               <label for="existingCertificationStandardExpiry">Standard Expiry</label>
-              <input type="text" v-model="newCertificationUpdateForm.standardExpiry" class="form-control" id="existingCertificationStandardExpiry" placeholder="2020-01-02">
+              <input type="text" v-model="newCertificationUpdateForm.standardExpiry" class="form-control" id="existingCertificationStandardExpiry" placeholder="2">
             </div>
           <div class="form-group">
             <label for="existingCertificationupdate"><b>Delete or edit record?</b></label>
