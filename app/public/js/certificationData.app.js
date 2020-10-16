@@ -31,7 +31,7 @@ var app = new Vue({
     },
 
     handleNewCertificationForm(evt) {
-      fetch('api/certifications/newCertification.php', {
+      fetch('api/certifications/newcertification.php', {
         method:'POST',
         body: JSON.stringify(this.newCertificationForm),
         headers: {
