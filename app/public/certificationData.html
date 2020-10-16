@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- my custom CSS goes here -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Certification Records</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
+      <a class="navbar-brand" href="#">Navbar | </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Index<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="memberData.html">Data Entry - Member</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="certificationData.html">Data Entry - Certification</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="detailed.html">Detailed View</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reports.html">Reports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Oconee County Fire Rescue</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row" id="dataPage">
+        <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
+          <form method="post" v-on:submit.prevent="handleNewCertificationForm">
+            <h3>Create New Certification Record</h3>
+
+          <div class="form-group">
+            <label for="newCertificationfName">First Name</label>
+            <input type="text" v-model="newCertificationForm.fName" class="form-control" id="newCertificationfName" placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label for="newCertificationlName">Last Name</label>
+            <input type="text" v-model="newCertificationForm.lName" class="form-control" id="newCertificationlName" placeholder="Doe">
+          </div>
+          <div class="form-group">
+            <label for="newCertificationdob">DOB</label>
+            <input type="text" v-model="newCertificationForm.dob" class="form-control" id="newCertificationdob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="newCertificationgender">Gender</label>
+            <select class="form-control" v-model="newCertificationForm.gender" id="newCertificationgender">
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+              <option value="O">Other/Unknown</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="newCertificationphonePrimary">Primary Phone</label>
+            <input type="text" v-model="newCertificationForm.phonePrimary" class="form-control" id="newCertificationphonePrimary" placeholder="800-700-6000">
+          </div>
+          <div class="form-group">
+            <label for="newCertificationphoneSecondary">Secondary Phone</label>
+            <input type="text" v-model="newCertificationForm.phoneSecondary" class="form-control" id="newCertificationphoneSecondary">
+          </div>
+          <div class="form-group">
+            <label for="newCertificationemail">Email</label>
+            <input type="text" v-model="newCertificationForm.email" class="form-control" id="newCertificationemail" placeholder="fire@gmail.com">
+          </div>
+          <div class="form-group">
+            <label for="newCertificationstreet">Street</label>
+            <input type="text" v-model="newCertificationForm.street" class="form-control" id="newCertificationstreet" placeholder="1275 E 10th St">
+          </div><div class="form-group">
+            <label for="newCertificationcity">City</label>
+            <input type="text" v-model="newCertificationForm.city" class="form-control" id="newCertificationcity" placeholder="Bloomington">
+          </div>
+          <div class="form-group">
+            <label for="newCertificationstate">State</label>
+            <input type="text" v-model="newCertificationForm.state" class="form-control" id="newCertificationstate" placeholder="Indiana">
+          </div>
+          <div class="form-group">
+            <label for="newCertificationzip">Zip</label>
+            <input type="text" v-model="newCertificationForm.zip" class="form-control" id="newCertificationzip" placeholder="47405">
+          </div>
+          <div class="form-group">
+            <label for="newCertificationstation">Station</label>
+            <input type="text" v-model="newCertificationForm.station" class="form-control" id="newCertificationstation" placeholder="Station 1">
+          </div>
+          <div class="form-group">
+            <label for="newCertificationtitle">Title</label>
+            <input type="text" v-model="newCertificationForm.title" class="form-control" id="newCertificationtitle" placeholder="Captain">
+          </div>
+          <div class="form-group">
+            <label for="newCertificationactive">Status</label>
+            <select class="form-control" v-model="newCertificationForm.active" id="newCertificationgender">
+              <option value="0">Inactive</option>
+              <option value="1">Active</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="newCertificationradioNum">Radio Number</label>
+            <input type="text" v-model="newCertificationForm.radioNum" class="form-control" id="newCertificationradioNum" placeholder="C_7">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Create</button>
+
+          </form>
+
+
+
+          <!-- <button v-on:click="yell()">Click Me!</button> -->
+        </div>
+
+        <div class="col-6">
+          <h3> Current Certifications </h3>
+
+          <div class=certificationCard" v-for="certification in certificationList" v-on:click="activeCertification = certification">
+            <span class="lastName">{{ certification.lName }}</span>,
+            <span clas="firstName">{{ certification.fName }}</span>
+            <span class="radionum">| Radio Number: {{ certification.radioNum }}</span>
+            <span clas="station">| Station: {{ certification.station }}</span>
+          </div>
+        </div>
+        <div class="col cardPane cardPaneRight">
+          <h1>Edit Certification Information</h1>
+          <form method="post" v-on:submit.prevent="handleCertificationDataForm">
+          <div class="form-group">
+            <label for="certificationName">Certification Name</label>
+            <input class="form-control" id="certificationName" v-bind:value="activeCertificationName" readonly>
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationdob">DOB</label>
+            <input type="text" v-model="newCertificationUpdateForm.dob" class="form-control" id="existingCertificationdob" placeholder="2020-01-02">
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationgender">Gender</label>
+            <select class="form-control" v-model="newCertificationUpdateForm.gender" id="existingCertificationgender">
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+              <option value="O">Other/Unknown</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationphonePrimary">Primary Phone</label>
+            <input type="text" v-model="newCertificationUpdateForm.phonePrimary" class="form-control" id="existingCertificationphonePrimary" placeholder="800-700-6000">
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationphoneSecondary">Secondary Phone</label>
+            <input type="text" v-model="newCertificationUpdateForm.phoneSecondary" class="form-control" id="existingCertificationphoneSecondary">
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationemail">Email</label>
+            <input type="text" v-model="newCertificationUpdateForm.email" class="form-control" id="existingCertificationemail" placeholder="fire@gmail.com">
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationstreet">Street</label>
+            <input type="text" v-model="newCertificationUpdateForm.street" class="form-control" id="existingCertificationstreet" placeholder="1275 E 10th St">
+          </div><div class="form-group">
+            <label for="existingCertificationcity">City</label>
+            <input type="text" v-model="newCertificationUpdateForm.city" class="form-control" id="existingCertificationcity" placeholder="Bloomington">
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationstate">State</label>
+            <input type="text" v-model="newCertificationUpdateForm.state" class="form-control" id="existingCertificationstate" placeholder="Indiana">
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationzip">Zip</label>
+            <input type="text" v-model="newCertificationUpdateForm.zip" class="form-control" id="existingCertificationzip" placeholder="47405">
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationstation">Station</label>
+            <input type="text" v-model="newCertificationUpdateForm.station" class="form-control" id="existingCertificationstation" placeholder="Station 1">
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationtitle">Title</label>
+            <input type="text" v-model="newCertificationUpdateForm.title" class="form-control" id="existingCertificationtitle" placeholder="Captain">
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationactive">Status</label>
+            <select class="form-control" v-model="newCertificationUpdateForm.active" id="existingCertificationactive">
+              <option value="0">Inactive</option>
+              <option value="1">Active</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationradioNum">Radio Number</label>
+            <input type="text" v-model="newCertificationUpdateForm.radioNum" class="form-control" id="existingCertificationradioNum" placeholder="C_7">
+          </div>
+          <div class="form-group">
+            <label for="existingCertificationupdate"><b>Delete or edit record?</b></label>
+            <select class="form-control" v-model="newCertificationUpdateForm.update" id="existingCertificationupdate">
+              <option value="delete">Delete</option>
+              <option value="edit">Edit</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Update</button>
+
+        </form>
+        </div>
+      </div>
+    </div>
+    <!-- END content -->
+
+    <!-- Footer? Insert here -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/certificationData.app.js"></script>
+  </body>
+</html>
