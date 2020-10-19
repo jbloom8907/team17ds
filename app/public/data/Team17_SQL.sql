@@ -22,20 +22,21 @@ VALUES ("Jordan", "Bloom", "1998-03-31", "M", "847-975-5699", NULL, "bloomjor@iu
 
 CREATE TABLE certification (
   certificationId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  agency VARCHAR(50) NOT NULL,
   name VARCHAR(50) NOT NULL,
+  agency VARCHAR(50) NOT NULL,
   standardExpiry INT NOT NULL
 );
 
-INSERT INTO certification (agency, name, standardExpiry)
-VALUES ("Red Cross", "Sample Certification", "2");
+INSERT INTO certification (name, agency, standardExpiry)
+VALUES ("Sample Certification", "Red Cross", "2");
 
 CREATE TABLE personCertification (
   memberCertificationId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  memberId INT NOT NULL,
-  certificationId INT NOT NULL,
+  fName VARCHAR(50) NOT NULL,
+  lName VARCHAR(50) NOT NULL,
+  certName VARCHAR(50) NOT NULL,
   expiryDate DATE NOT NULL
 );
 
-INSERT INTO personCertification (memberId, certificationId, expiryDate)
-VALUES (1, 1, "2022-10-5");
+INSERT INTO personCertification (fName, lName, certName, expiryDate)
+VALUES ("Jordan", "Bloom", "Sample Certification", "2022-10-5");
