@@ -16,15 +16,15 @@ var app = new Vue({
     newCertificationData() {
       return {
         selection: "",
-        agency: "",
         name: "",
+        agency: "",
         standardExpiry: ""
       }
     },
     updateCertificationData() {
       return {
-        agency: "",
         name: "",
+        agency: "",
         standardExpiry: "",
         update: ""
       }

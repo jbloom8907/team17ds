@@ -72,7 +72,7 @@ var app = new Vue({
     handleMemberDataForm( evt ) {
       this.newMemberUpdateForm.selection = this.activeMember.email;
 
-      fetch('api/updates/updatemember.php', {
+      fetch('api/members/updatemember.php', {
         method:'POST',
         body: JSON.stringify(this.newMemberUpdateForm),
         headers: {
@@ -100,13 +100,13 @@ var app = new Vue({
       console.log(json)}
     );
 
-    fetch("api/updates/")
-    .then( response => response.json() )
-    .then( json => {
-      this.memberUpdateList = json;
-
-      console.log(json)}
-    );
+    // fetch("api/updates/")
+    // .then( response => response.json() )
+    // .then( json => {
+    //   this.memberUpdateList = json;
+    //
+    //   console.log(json)}
+    // );
 
     this.newMemberForm = this.newMemberData();
     this.newMemberUpdateForm = this.updateMemberData();

@@ -49,12 +49,12 @@
             <h3>Create New Certification Record</h3>
 
           <div class="form-group">
-            <label for="newCertificationAgency">Agency</label>
-            <input type="text" v-model="newCertificationForm.agency" class="form-control" id="newCertificationAgency" placeholder="Red Cross">
-          </div>
-          <div class="form-group">
             <label for="newCertificationName">Certification Name</label>
             <input type="text" v-model="newCertificationForm.name" class="form-control" id="newCertificationName" placeholder="CPR Certification">
+          </div>
+          <div class="form-group">
+            <label for="newCertificationAgency">Agency</label>
+            <input type="text" v-model="newCertificationForm.agency" class="form-control" id="newCertificationAgency" placeholder="Red Cross">
           </div>
           <div class="form-group">
             <label for="newCertificationStandardExpiry">Standard Expiry</label>
@@ -74,21 +74,21 @@
           <h3> Current Certifications </h3>
 
           <div class="certificationCard" v-for="certification in certificationList" v-on:click="activeCertification = certification">
-            <span class="Agency">{{ certification.agency }}</span>,
-            <span class="Name">{{ certification.name }}</span>
-            <span class="StandardExpiry">{{ certification.standardExpiry }}</span>
+            <span class="Name">{{ certification.name }}</span>,
+            <span class="Agency">{{ certification.agency }}</span>
+            <span class="StandardExpiry">Standard Expiry: {{ certification.standardExpiry }} years</span>
           </div>
         </div>
         <div class="col cardPane cardPaneRight">
           <h1>Edit Certification Information</h1>
           <form method="post" v-on:submit.prevent="handleCertificationDataForm">
             <div class="form-group">
-              <label for="existingCertificationAgency">Agency</label>
-              <input type="text" v-model="newCertificationUpdateForm.agency" class="form-control" id="existingCertificationAgency" placeholder="Red Cross">
-            </div>
-            <div class="form-group">
               <label for="existingCertificationName">Certification Name</label>
               <input class="form-control" id="existingCertificationName" v-bind:value="activeCertificationName" readonly>
+            </div>
+            <div class="form-group">
+              <label for="existingCertificationAgency">Agency</label>
+              <input type="text" v-model="newCertificationUpdateForm.agency" class="form-control" id="existingCertificationAgency" placeholder="Red Cross">
             </div>
             <div class="form-group">
               <label for="existingCertificationStandardExpiry">Standard Expiry</label>
