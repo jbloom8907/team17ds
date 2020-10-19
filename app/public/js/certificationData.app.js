@@ -52,7 +52,7 @@ var app = new Vue({
     handleCertificationDataForm( evt ) {
       this.newCertificationUpdateForm.selection = this.activeCertification.name;
 
-      fetch('api/updates/updateCertification.php', {
+      fetch('api/certifications/updatecertification.php', {
         method:'POST',
         body: JSON.stringify(this.newCertificationUpdateForm),
         headers: {
