@@ -79,15 +79,7 @@ var app = new Vue({
 
       console.log(json)}
     );
-
-    fetch("api/updates/")
-    .then( response => response.json() )
-    .then( json => {
-      this.certificationUpdateList = json;
-
-      console.log(json)}
-    );
-
+    
     this.newCertificationForm = this.newCertificationData();
     this.newCertificationUpdateForm = this.updateCertificationData();
   }
