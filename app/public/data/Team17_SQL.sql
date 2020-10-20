@@ -30,7 +30,7 @@ CREATE TABLE certification (
 INSERT INTO certification (name, agency, standardExpiry)
 VALUES ("Sample Certification", "Red Cross", "2");
 
-CREATE TABLE personCertification (
+CREATE TABLE memberCertification (
   memberCertificationId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   fName VARCHAR(50) NOT NULL,
   lName VARCHAR(50) NOT NULL,
@@ -38,5 +38,5 @@ CREATE TABLE personCertification (
   expiryDate DATE NOT NULL
 );
 
-INSERT INTO personCertification (fName, lName, certName, expiryDate)
+INSERT INTO memberCertification (fName, lName, certName, expiryDate)
 VALUES ("Jordan", "Bloom", "Sample Certification", "2022-10-5");
