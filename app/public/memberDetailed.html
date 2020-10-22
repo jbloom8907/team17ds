@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- my custom CSS goes here -->
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Index</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
+      <a class="navbar-brand" href="index.html">Oconee County Fire Rescue | </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="memberData.html">Member Data Entry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="certificationData.html">Certification Data Entry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="memberCertificationData.html">Award Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="memberDetailed.html">View Members</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="certificationDetailed.html">View Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="certificationReport.html">Certification Reports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="memberReport.html">Member Reports</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row" id="memberDetailed">
+        <div class="col myLeftCol">
+        </div>
+        <div class="col-6">
+          <form v-on:submit.prevent="createView()">
+            <label for="memberSelection">Select Member</label>
+            <select v-model="newMemberCertificationForm.selected" class="form-control">
+              <option v-for="member in members" v-bind:value="member.fName + ' ' + member.lName">
+                {{ member.fName }} {{ member.lName }}
+              </option>
+            </select>
+            <button type="submit" class="btn btn-primary">Create Member View</button>
+          </form>
+          <br>
+          <table class="table table-striped table-bordered" id="expiryReport">
+              <thead>
+                    <tr>
+                      <th>Certification Name</th>
+                      <th>Expiry Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="memberCertification in memberCertifications">
+                      <td>{{ memberCertification.certName }}</td>
+                      <td>{{ memberCertification.expiryDate }}</td>
+                    </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col">
+        </div>
+      </div>
+    </div>
+    <!-- END content -->
+    <!-- Footer? Insert here -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/memberDetailed.app.js"></script>
+  </body>
+</html>
