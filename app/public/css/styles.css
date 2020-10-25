@@ -13,6 +13,20 @@ button,
   border-color: rgb(0,0,0)
 }
 
+.center {
+  margin: 0;
+  position: absolute;
+  left: 35%;
+}
+
+.view-center {
+position: relative;
+display: inline-block;
+left: 43%;
+transform: translateX(-50%);
+}
+
+
 nav,
 .bg-custom {
   background-color: rgb(151,33,36);
