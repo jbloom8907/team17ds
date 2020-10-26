@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 html,
 body {
   background-color: rgb(100,17,17);
@@ -133,3 +134,30 @@ td{
   border-color: #641111;
 
 }
+
+.wrapper {
+  position: relative;
+  display: flex;
+  min-width: 100px;
+}
+.search-icon {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  width: 14px;
+}
+
+  .search {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 24px;
+    width: 120px;
+    padding: 2px 23px 2px 30px;
+    outline: 0;
+    background-color: #f5f5f5;
+  }
+
+    .search:hover, .search:focus {
+      border: 1.5px solid #009688;
+      background-color: white;
+    }
