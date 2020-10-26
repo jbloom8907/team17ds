@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- my custom CSS goes here -->
     <link rel="stylesheet" href="css/styles.css">
-    <title>Index</title>
+    <title>View Members</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -47,7 +47,7 @@
         </div>
         <div class="col-6">
           <form v-on:submit.prevent="createView()">
-            <label for="memberSelection">Select Member</label>
+            <label for="memberSelection"><h3>Select Member</h3></label>
             <select v-model="newMemberCertificationForm.selected" class="form-control">
               <option v-for="member in members" v-bind:value="member.fName + ' ' + member.lName">
                 {{ member.fName }} {{ member.lName }}

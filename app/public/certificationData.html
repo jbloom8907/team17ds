@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- my custom CSS goes here -->
     <link rel="stylesheet" href="css/styles.css">
-    <title>Index</title>
+    <title>Certification Data Entry</title>
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -80,11 +81,11 @@
           </div>
         </div>
         <div class="col cardPane cardPaneRight">
-          <h1>Edit Certification Information</h1>
+          <h3>Edit Certification Information</h3>
           <form method="post" v-on:submit.prevent="handleCertificationDataForm">
             <div class="form-group">
               <label for="existingCertificationName">Certification Name</label>
-              <input class="form-control" id="existingCertificationName" v-bind:value="activeCertificationName" readonly>
+              <input class="form-control" id="existingCertificationName" v-bind:value="activeCertificationName" readonly placeholder="CPR Certification">
             </div>
             <div class="form-group">
               <label for="existingCertificationAgency">Agency</label>
