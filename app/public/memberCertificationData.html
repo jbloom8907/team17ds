@@ -44,7 +44,7 @@
     <div class="container-fluid">
       <div class="row" id="dataPage">
         <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
-          <form method="post" v-on:submit.prevent="handleNewMemberCertificationForm">
+          <form method="post" v-on:submit="handleNewMemberCertificationForm">
             <h3>Award Member Certification</h3>
           <div class="form-group">
             <label for="newMemberCertificationfName">Member First Name</label>
@@ -80,14 +80,14 @@
         </div>
         <div class="col cardPane cardPaneRight">
           <h3>Edit Awarded Certification Information</h3>
-          <form method="post" v-on:submit.prevent="handleMemberCertificationDataForm">
+          <form method="post" v-on:submit="handleMemberCertificationDataForm">
           <div class="form-group">
             <label for="memberName">Member Name</label>
             <input class="form-control" id="memberName" v-bind:value="activeMemberCertificationName" readonly placeholder="Jane Doe">
           </div>
           <div class="form-group">
             <label for="existingMembercertName">Certification Name</label>
-            <input type="text" v-model="newMemberCertificationUpdateForm.certName" class="form-control" id="existingMembercertName" placeholder="800-700-6000">
+            <input type="text" v-model="newMemberCertificationUpdateForm.certName" class="form-control" id="existingMembercertName" placeholder="CPR Certification">
           </div>
           <div class="form-group">
           <div class="form-group">

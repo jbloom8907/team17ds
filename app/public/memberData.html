@@ -137,7 +137,7 @@
         </div>
         <div class="col cardPane cardPaneRight">
           <h3>Edit Member Information</h3>
-          <form method="post" v-on:submit.prevent="handleMemberDataForm">
+          <form method="post" v-on:submit="handleMemberDataForm">
           <div class="form-group">
             <label for="memberName">Member Name</label>
             <input class="form-control" id="memberName" v-bind:value="activeMemberName" readonly placeholder="Jane Doe">

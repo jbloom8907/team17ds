@@ -82,7 +82,7 @@
         </div>
         <div class="col cardPane cardPaneRight">
           <h3>Edit Certification Information</h3>
-          <form method="post" v-on:submit.prevent="handleCertificationDataForm">
+          <form method="post" v-on:submit="handleCertificationDataForm">
             <div class="form-group">
               <label for="existingCertificationName">Certification Name</label>
               <input class="form-control" id="existingCertificationName" v-bind:value="activeCertificationName" readonly placeholder="CPR Certification">
