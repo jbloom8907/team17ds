@@ -161,3 +161,53 @@ td{
       border: 1.5px solid #009688;
       background-color: white;
     }
+
+    .home {
+      margin:0;
+      padding: 0;
+      font-family:poppins;
+      background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0,0,0,0.5)),url("https://images.unsplash.com/photo-1583960222449-0499d11a3dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1601&q=80");
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-position: center center;
+      background-repeat:no-repeat;
+      height: 100vh;
+  }
+
+  .col-6 {
+    font-size: larger;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px
+}
+
+  a:visited {
+    font-size: large;
+    color: rgb(206, 206, 206);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:hover {
+    font-size: large;
+    color: rgb(231, 134, 55);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .footer{
+    width:100vw;
+    display:block;
+    overflow:hidden;
+    bottom: 0;
+    position: absolute;
+    box-sizing: border-box;
+    background-color:#262626 
+}
+
+h1{
+  font-weight: bold
+}
